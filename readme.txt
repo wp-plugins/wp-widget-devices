@@ -1,5 +1,4 @@
 === Plugin Name ===
-
 Contributors: iLenStudio
 Plugin Name: WP Widget Devices
 Plugin URI: 
@@ -7,9 +6,9 @@ Tags: only devices,tablet,movil,only movil,only tablet,plugin tablet,plugin movi
 Author URI: 
 Author: iLen
 Requires at least: 3.0
-Tested up to: 3.8
+Tested up to: 4.1
 Stable tag: 1.0
-Version: 1.1
+Version: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,6 +39,8 @@ You can place a HTML text for display devices you want.
 
 
 == Changelog ==
+= 1.2 =
+* Minor changes
 = 1.1 =
 * Corrections in method Javascript
 = 1.0 =

